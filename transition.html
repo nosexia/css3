@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition用法</title>
+</head>
+<style> 
+    div
+    {
+        width:100px;
+        height:100px;
+        background:blue;
+        transition:width 2s;
+        -moz-transition:width 2s; /* Firefox 4 */
+        -webkit-transition:width 2s; /* Safari and Chrome */
+        -o-transition:width 2s; /* Opera */
+    }
+    /****目标属性，必须是一个具体的数值，不能是auto(坑)***/
+    div.current
+    {
+        width:500px;
+    }
+</style>
+<body>
+
+    <div id='div1'></div>
+</body>
+<script type="text/javascript">
+    window.addEventListener('load', function(){
+        var oDiv1 = document.querySelector('#div1');
+        //渲染css动画，必须等window加载完才能执行
+        oDiv1.classList.add('current');    
+    },false)
+    
+</script>
+</html>
