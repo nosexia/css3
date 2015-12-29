@@ -2,32 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>prefix-css</title>
+    <title>这样子写函数，会直接执行</title>
     <script type="text/javascript">
-        var result = (function getBrowerCssPrefix(testCss){
-            switch(true){
-                case testCss.webkitTransition === '' :
-                    return 'webkit';
-                    break;
+        var brower = {
+                cssCore: function getBrowerCssPrefix(testCss){
+                            switch(true){
+                                case testCss.webkitTransition === '' :
+                                    return 'webkit';
+                                    break;
 
-                case testCss.MozTransition === '' :
-                    return 'Moz';
-                    break;
+                                case testCss.MozTransition === '' :
+                                    return 'Moz';
+                                    break;
 
-                case testCss.msTransition === '' :
-                    return 'ms';
-                    break;
-                case testCss.OTransition === '' :
-                    return 'O';
-                    break;
-            }
-        })(document.createElement('div').style);
+                                case testCss.msTransition === '' :
+                                    return 'ms';
+                                    break;
 
-        alert(result)
+                                case testCss.OTransition === '' :
+                                    return 'O';
+                                    break;
+                            }
+                        }(document.createElement('div').style)
+        }
+
     </script>
 </head>
 <body>
-    <p>transition加入不同的前缀，来判断不同css引擎类型</p>
+    <p>函数用':'定义在对象上，在函数后面加入(),直接执行</p>
         
 </body>
 </html>
