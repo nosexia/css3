@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prefix-css</title>
+    <script type="text/javascript">
+        var result = (function getBrowerCssPrefix(testCss){
+            switch(true){
+                case testCss.webkitTransition === '' :
+                    return 'webkit';
+                    break;
+
+                case testCss.MozTransition === '' :
+                    return 'Moz';
+                    break;
+
+                case testCss.msTransition === '' :
+                    return 'ms';
+                    break;
+                case testCss.OTransition === '' :
+                    return 'O';
+                    break;
+            }
+        })(document.createElement('div').style);
+
+        alert(result)
+    </script>
+</head>
+<body>
+    <p>transition加入不同的前缀，来判断不同css引擎类型</p>
+        
+</body>
+</html>
