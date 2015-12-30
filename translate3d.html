@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    .div1{
+        width:100px;
+        height:100px;
+        background:red;
+    }
+
+    .div1.current{
+        width:400px;
+        height:500px;
+    }
+    </style>
+</head>
+<body>
+    <div class="div1" id="div1">设置webkitTransitionDuration属性，产生动画效果</div>
+</body>
+
+<script type="text/javascript">
+    var oDiv = document.querySelector('#div1');
+    oDiv.addEventListener('click', function(){
+        this.classList.add('current');
+        this.style.webkitTransitionDuration = '2000ms';
+    },false);
+</script>
+
+</html>
