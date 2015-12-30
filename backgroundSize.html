@@ -2,45 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>@keyframes + animation做动画(由远到近)</title>
+    <title>background-size(填坑)</title>
     <style type="text/css">
-        .m-wrap{
-            width:100%;
-            height:633px;
-            overflow:hidden;
+        .div1{
+          width:100%;
+          height: 1000px;
+          background:url(images/banner1_v2.png) no-repeat;
+          background-size:100% 100%;
         }
-
-        .m-content{
-            width:100%;
-            height:633px;
-            background:url(images/banner1_v2.png);
-            background-size:100%;
-            animation: growImage 15s 0s ease-in infinite alternate;
-        }
-
-        @keyframes growImage{
-            0% {
-                transform: translate3d(0, 0 ,0) scale(1);
-            }
-            100% {
-                transform: translate3d(0, 0, 0) scale(1.1);  
-            }   
-        }
-
-
     </style>
 </head>
 <body>
-    
-    <p>
-        alternate属性表示交替反向运动
-        动画运行的次数无限循环（infinite）
-
-    </p>
-
-    <div  class="m-wrap">
-        <div class="m-content"></div>
-    </div>
-
+<p>background-size只写一个100%参数时，只铺满容器宽度，高度自动
+    background-size写两个100%参数，宽、高都铺满
+</p>  
+  <div class="div1"></div>
 </body>
 </html>
