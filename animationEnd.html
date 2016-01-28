@@ -2,20 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>webkitAnimationEnd事件监听运动结束</title>
+    <title>animationName指定运动针的名称</title>
     <style type="text/css">
     div{
         width:100px;
         height: 100px;
         background: red;
-        animation: test 1s;
     }
 
-    div.show{
-        transform: translate(0, 200px);
-    }    
+    div.down{
+        animation: down 1s;
+    }
 
-    @keyframes test{
+    div.down-style{
+        transform: translate(0, 200px);
+    }
+
+    div.up{
+        animation: up 1s;
+    }
+
+    div.up-style{
+        transform: translate(0, 0);
+    }
+
+
+    @keyframes down{
         0% {
             transform: translate(0, 0);
         }
@@ -23,20 +35,55 @@
             transform: translate(0, 200px);
         }
     }
+
+    @keyframes up{
+        0% {
+            transform: translate(0, 200px);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+
     </style>
 </head>
 <body>
-
+<p>
+    <input type="button" value="向上" id="up" />
+    <input type="button" value="向下" id="down" />
+</p>
 <div>
     
 </div>
+
+
     
 </body>
 <script type="text/javascript">
     var oDiv = document.querySelector('div');
-    oDiv.addEventListener('webkitAnimationEnd', function(){
+    var oUp = document.querySelector('#up');
+    var oDown = document.querySelector('#down');
+
+    // 点击向下
+    oDown.addEventListener('click', function(){
+        oDiv.classList.remove('up');
+        oDiv.classList.remove('up-style');
+        oDiv.classList.add('down');
+    }, false);
+
+    // 点击向上
+    oUp.addEventListener('click', function(){
+        oDiv.classList.add('up');
+    }, false);
+
+    oDiv.addEventListener('webkitAnimationEnd', function(e){
         // 定格在最后一针
-        this.classList.add('show');
+        if( e.animationName === 'down' ){
+            this.classList.add('down-style');
+        }else if(e.animationName === 'up'){
+            this.classList.add('up-style');
+        }
     }, false);
 </script>
 </html>
