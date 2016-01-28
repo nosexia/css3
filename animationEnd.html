@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>兼容safari浏览器，加css前缀</title>
+    <title>transform不支持内联样式（在手机端）</title>
     <style type="text/css">
     div{
         width:100px;
@@ -79,7 +79,9 @@
     <input type="button" value="向上" id="up" />
     <input type="button" value="向下" id="down" />
 </p>
-<div>
+
+<p>transform不支持内联样式（在手机端）</p>
+<div style="transform: translate(0, 200px)">
     
 </div>
 
