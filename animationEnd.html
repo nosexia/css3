@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>animationName指定运动针的名称</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>兼容safari浏览器，加css前缀</title>
     <style type="text/css">
     div{
         width:100px;
@@ -11,18 +15,22 @@
     }
 
     div.down{
-        animation: down 1s;
+        -webkit-animation : down 1s;
+        animation: down 1s;        
     }
 
     div.down-style{
+        -webkit-transform: translate(0, 200px);
         transform: translate(0, 200px);
     }
 
     div.up{
+        -webkit-animation: up 1s;
         animation: up 1s;
     }
 
     div.up-style{
+        -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
 
@@ -36,12 +44,30 @@
         }
     }
 
+    @-webkit-keyframes down{
+        0% {
+            -webkit-transform: translate(0, 0);
+        }
+        100% {
+            -webkit-transform: translate(0, 200px);
+        }
+    }
+
     @keyframes up{
         0% {
             transform: translate(0, 200px);
         }
         100% {
             transform: translate(0, 0);
+        }
+    }
+
+    @-webkit-keyframes up{
+        0% {
+            -webkit-transform: translate(0, 200px);
+        }
+        100%{
+            -webkit-transform: translate(0, 0);
         }
     }
 
