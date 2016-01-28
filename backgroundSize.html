@@ -2,20 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>background-size(填坑)</title>
+    <title>@keyframes + animation做动画(由远到近)</title>
     <style type="text/css">
-        .div1{
-          width:100%;
-          height: 1000px;
-          background:url(images/banner1_v2.png) no-repeat;
-          background-size:100% 100%;
+        .m-wrap{
+            width:100%;
+            height:633px;
+            overflow:hidden;
         }
+
+        .m-content{
+            width:100px;
+            height:100px;
+            background:url(images/banner1_v2.png);
+            background-size:100%;
+            -webkit-animation: growImage 15s 0s linear infinite alternate;
+            animation: growImage 15s 0s linear infinite alternate;
+            
+        }
+
+
+        @-webkit-keyframes growImage{
+            0% {
+                -webkit-transform: translate3d(0, 0 ,0) ;
+            }
+            100% {
+                -webkit-transform: translate3d(200px, 0, 0);  
+            }   
+        }
+
+        @keyframes growImage{
+            0% {
+                transform: translate3d(0, 0 ,0) ;
+            }
+            100% {
+                transform: translate3d(200px, 0, 0);  
+            }   
+        }
+
+
+
+
     </style>
 </head>
 <body>
-<p>background-size只写一个100%参数时，只铺满容器宽度，高度自动
-    background-size写两个100%参数，宽、高都铺满
-</p>  
-  <div class="div1"></div>
+    
+<p>background-size适合做移动端背景满屏处理</p>
+
+    <div  class="m-wrap">
+        <div class="m-content"></div>
+    </div>
+
 </body>
 </html>
