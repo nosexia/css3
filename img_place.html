@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5模式下，图片下面有几像素的留白</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        div{
+            border: 1px solid #000;
+        }
+
+        img{
+           width: 200px;
+           height: auto; 
+           display: block;
+        }
+
+        span{
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div><img src="images/1.jpg"></div>
+    <div><span></span></div>
+    <p>
+        HTML5模式下，图片下面有几像素的留白(span,加入inline-block，同理)</br>
+        解决方案</br>
+        给img加display:block;
+    </p>
+    
+</body>
+</html>
