@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>在safari浏览器中，点击div</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            cursor:pointer
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    在safari浏览器中，点击div，无效
+    分析：</br>
+    safari浏览器中，默认事件touch,不是click</br>
+    只会有touch事件冒泡，所以document监听不到click事件</br>
+
+
+    解决方案</br>
+    在需要click冒泡的元素上，加上cursor:pointer
+
+
+</body>
+<script type="text/javascript">
+    document.addEventListener('click', function(){
+        alert('1111');
+    }, false);
+</script>
+</html>
