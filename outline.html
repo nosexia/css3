@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>outline</title>
+<style type="text/css">
+    .div1{
+        width: 100px;
+        height: 100px;
+        background: black;
+        outline: 10px dotted red;
+    }
+</style>    
+</head>
+<p>
+    设置多重边框可以采用outline的方式,可以设置为虚线框
+</p>
+<p>
+    可以通过设置outline-offset属性来设置outline边框到边缘的距离（兼容性很差）
+</p>
+<p>
+    缺点通过outline设置的边框值都不在盒模型中
+</p>
+<body>
+    <div class="div1"></div>
+</body>
+</html>
