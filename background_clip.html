@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-clip的用法</title>
+<style type="text/css">
+.div1{
+    width: 200px;
+    height: 200px;
+    border: 10px solid rgba(0, 1, 1, 0.1);
+    background: url('../images/dog.jpg');
+    background-clip: content-box;
+}
+</style>
+</style>
+</head>
+<body>
+<dl>
+ <dt><code>border-box</code></dt>
+ <dd>背景延伸到边框外沿（但是在边框之下）。</dd>
+ <dt><code>padding-box</code></dt>
+ <dd>边框下面没有背景，即背景延伸到内边距外沿。</dd>
+ <dt><code>content-box</code></dt>
+ <dd>背景裁剪到内容区 (<code>content-box)&nbsp;</code>外沿。</dd>
+</dl>
+<div class="div1"></div>
+    
+</body>
+</html>
